@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		859523FB1E1CDE9500401AE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859523FA1E1CDE9500401AE8 /* AppDelegate.swift */; };
-		859523FD1E1CDE9500401AE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859523FC1E1CDE9500401AE8 /* ViewController.swift */; };
 		859524001E1CDE9500401AE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 859523FE1E1CDE9500401AE8 /* Main.storyboard */; };
 		859524021E1CDE9600401AE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 859524011E1CDE9600401AE8 /* Assets.xcassets */; };
 		859524101E1CDE9600401AE8 /* douyuzhiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8595240F1E1CDE9600401AE8 /* douyuzhiboTests.swift */; };
@@ -36,7 +35,6 @@
 /* Begin PBXFileReference section */
 		859523F71E1CDE9500401AE8 /* douyuzhibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = douyuzhibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		859523FA1E1CDE9500401AE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		859523FC1E1CDE9500401AE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		859523FF1E1CDE9500401AE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		859524011E1CDE9600401AE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		859524061E1CDE9600401AE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -98,7 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				859523FA1E1CDE9500401AE8 /* AppDelegate.swift */,
-				859523FC1E1CDE9500401AE8 /* ViewController.swift */,
+				85C7E7AD1E20CB6C008C5404 /* classes */,
 				859523FE1E1CDE9500401AE8 /* Main.storyboard */,
 				859524011E1CDE9600401AE8 /* Assets.xcassets */,
 				859524281E1CE30B00401AE8 /* douyu_LCD_font.TTF */,
@@ -123,6 +121,53 @@
 				8595241C1E1CDE9600401AE8 /* Info.plist */,
 			);
 			path = douyuzhiboUITests;
+			sourceTree = "<group>";
+		};
+		85C7E7AD1E20CB6C008C5404 /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				85C7E7AE1E20CB6C008C5404 /* Follow */,
+				85C7E7AF1E20CB6C008C5404 /* Home */,
+				85C7E7B01E20CB6C008C5404 /* Live */,
+				85C7E7B11E20CB6C008C5404 /* Profile */,
+				85C7E7B21E20CB6C008C5404 /* video */,
+			);
+			path = classes;
+			sourceTree = "<group>";
+		};
+		85C7E7AE1E20CB6C008C5404 /* Follow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Follow;
+			sourceTree = "<group>";
+		};
+		85C7E7AF1E20CB6C008C5404 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		85C7E7B01E20CB6C008C5404 /* Live */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Live;
+			sourceTree = "<group>";
+		};
+		85C7E7B11E20CB6C008C5404 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		85C7E7B21E20CB6C008C5404 /* video */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = video;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,7 +307,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				859523FD1E1CDE9500401AE8 /* ViewController.swift in Sources */,
 				859523FB1E1CDE9500401AE8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
