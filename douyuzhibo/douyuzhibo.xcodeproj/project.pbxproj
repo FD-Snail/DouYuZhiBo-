@@ -410,6 +410,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = N693ZXV8T4;
 				INFOPLIST_FILE = douyuzhibo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.douyuzhibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -425,6 +426,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = N693ZXV8T4;
 				INFOPLIST_FILE = douyuzhibo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.douyuzhibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -510,6 +512,7 @@
 				859524211E1CDE9600401AE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		859524221E1CDE9600401AE8 /* Build configuration list for PBXNativeTarget "douyuzhiboTests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +521,7 @@
 				859524241E1CDE9600401AE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		859524251E1CDE9600401AE8 /* Build configuration list for PBXNativeTarget "douyuzhiboUITests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +530,7 @@
 				859524271E1CDE9600401AE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
