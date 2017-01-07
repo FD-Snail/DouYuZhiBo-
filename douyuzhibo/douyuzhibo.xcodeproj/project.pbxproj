@@ -8,11 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		859523FB1E1CDE9500401AE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859523FA1E1CDE9500401AE8 /* AppDelegate.swift */; };
-		859524001E1CDE9500401AE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 859523FE1E1CDE9500401AE8 /* Main.storyboard */; };
 		859524021E1CDE9600401AE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 859524011E1CDE9600401AE8 /* Assets.xcassets */; };
 		859524101E1CDE9600401AE8 /* douyuzhiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8595240F1E1CDE9600401AE8 /* douyuzhiboTests.swift */; };
 		8595241B1E1CDE9600401AE8 /* douyuzhiboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8595241A1E1CDE9600401AE8 /* douyuzhiboUITests.swift */; };
 		859524291E1CE30B00401AE8 /* douyu_LCD_font.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 859524281E1CE30B00401AE8 /* douyu_LCD_font.TTF */; };
+		85C7E7C21E20D8A9008C5404 /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C7E7C11E20D8A9008C5404 /* MainTabbarController.swift */; };
+		85C7E7C71E20E53C008C5404 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85C7E7C61E20E53C008C5404 /* Main.storyboard */; };
+		85C7E7C91E20E545008C5404 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85C7E7C81E20E545008C5404 /* Home.storyboard */; };
+		85C7E7CB1E20E564008C5404 /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85C7E7CA1E20E564008C5404 /* Live.storyboard */; };
+		85C7E7CD1E20E597008C5404 /* Follow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85C7E7CC1E20E597008C5404 /* Follow.storyboard */; };
+		85C7E7CF1E20E5BD008C5404 /* Video.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85C7E7CE1E20E5BD008C5404 /* Video.storyboard */; };
+		85C7E7D11E20E5D2008C5404 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85C7E7D01E20E5D2008C5404 /* Profile.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +41,6 @@
 /* Begin PBXFileReference section */
 		859523F71E1CDE9500401AE8 /* douyuzhibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = douyuzhibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		859523FA1E1CDE9500401AE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		859523FF1E1CDE9500401AE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		859524011E1CDE9600401AE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		859524061E1CDE9600401AE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8595240B1E1CDE9600401AE8 /* douyuzhiboTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = douyuzhiboTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,7 +49,14 @@
 		859524161E1CDE9600401AE8 /* douyuzhiboUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = douyuzhiboUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8595241A1E1CDE9600401AE8 /* douyuzhiboUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = douyuzhiboUITests.swift; sourceTree = "<group>"; };
 		8595241C1E1CDE9600401AE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		859524281E1CE30B00401AE8 /* douyu_LCD_font.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = douyu_LCD_font.TTF; sourceTree = "<group>"; };
+		859524281E1CE30B00401AE8 /* douyu_LCD_font.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = douyu_LCD_font.TTF; path = ../../douyu_LCD_font.TTF; sourceTree = "<group>"; };
+		85C7E7C11E20D8A9008C5404 /* MainTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabbarController.swift; sourceTree = "<group>"; };
+		85C7E7C61E20E53C008C5404 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		85C7E7C81E20E545008C5404 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		85C7E7CA1E20E564008C5404 /* Live.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Live.storyboard; sourceTree = "<group>"; };
+		85C7E7CC1E20E597008C5404 /* Follow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Follow.storyboard; sourceTree = "<group>"; };
+		85C7E7CE1E20E5BD008C5404 /* Video.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Video.storyboard; sourceTree = "<group>"; };
+		85C7E7D01E20E5D2008C5404 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +109,7 @@
 			children = (
 				859523FA1E1CDE9500401AE8 /* AppDelegate.swift */,
 				85C7E7AD1E20CB6C008C5404 /* classes */,
-				859523FE1E1CDE9500401AE8 /* Main.storyboard */,
 				859524011E1CDE9600401AE8 /* Assets.xcassets */,
-				859524281E1CE30B00401AE8 /* douyu_LCD_font.TTF */,
 				859524061E1CDE9600401AE8 /* Info.plist */,
 			);
 			path = douyuzhibo;
@@ -126,11 +136,13 @@
 		85C7E7AD1E20CB6C008C5404 /* classes */ = {
 			isa = PBXGroup;
 			children = (
-				85C7E7AE1E20CB6C008C5404 /* Follow */,
+				85C7E7B31E20D2F2008C5404 /* Main */,
 				85C7E7AF1E20CB6C008C5404 /* Home */,
 				85C7E7B01E20CB6C008C5404 /* Live */,
-				85C7E7B11E20CB6C008C5404 /* Profile */,
 				85C7E7B21E20CB6C008C5404 /* video */,
+				85C7E7AE1E20CB6C008C5404 /* Follow */,
+				85C7E7B11E20CB6C008C5404 /* Profile */,
+				85C7E7B41E20D2FC008C5404 /* Tools */,
 			);
 			path = classes;
 			sourceTree = "<group>";
@@ -138,6 +150,7 @@
 		85C7E7AE1E20CB6C008C5404 /* Follow */ = {
 			isa = PBXGroup;
 			children = (
+				85C7E7CC1E20E597008C5404 /* Follow.storyboard */,
 			);
 			path = Follow;
 			sourceTree = "<group>";
@@ -145,6 +158,10 @@
 		85C7E7AF1E20CB6C008C5404 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				85C7E7C81E20E545008C5404 /* Home.storyboard */,
+				85C7E7C31E20DDCC008C5404 /* Controllers */,
+				85C7E7C41E20DDCC008C5404 /* Models */,
+				85C7E7C51E20DDCC008C5404 /* Views */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -152,6 +169,7 @@
 		85C7E7B01E20CB6C008C5404 /* Live */ = {
 			isa = PBXGroup;
 			children = (
+				85C7E7CA1E20E564008C5404 /* Live.storyboard */,
 			);
 			path = Live;
 			sourceTree = "<group>";
@@ -159,6 +177,7 @@
 		85C7E7B11E20CB6C008C5404 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				85C7E7D01E20E5D2008C5404 /* Profile.storyboard */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -166,8 +185,47 @@
 		85C7E7B21E20CB6C008C5404 /* video */ = {
 			isa = PBXGroup;
 			children = (
+				85C7E7CE1E20E5BD008C5404 /* Video.storyboard */,
 			);
 			path = video;
+			sourceTree = "<group>";
+		};
+		85C7E7B31E20D2F2008C5404 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				85C7E7C11E20D8A9008C5404 /* MainTabbarController.swift */,
+				85C7E7C61E20E53C008C5404 /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		85C7E7B41E20D2FC008C5404 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				859524281E1CE30B00401AE8 /* douyu_LCD_font.TTF */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		85C7E7C31E20DDCC008C5404 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		85C7E7C41E20DDCC008C5404 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		85C7E7C51E20DDCC008C5404 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,9 +338,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85C7E7C91E20E545008C5404 /* Home.storyboard in Resources */,
 				859524291E1CE30B00401AE8 /* douyu_LCD_font.TTF in Resources */,
+				85C7E7D11E20E5D2008C5404 /* Profile.storyboard in Resources */,
 				859524021E1CDE9600401AE8 /* Assets.xcassets in Resources */,
-				859524001E1CDE9500401AE8 /* Main.storyboard in Resources */,
+				85C7E7CB1E20E564008C5404 /* Live.storyboard in Resources */,
+				85C7E7CF1E20E5BD008C5404 /* Video.storyboard in Resources */,
+				85C7E7C71E20E53C008C5404 /* Main.storyboard in Resources */,
+				85C7E7CD1E20E597008C5404 /* Follow.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85C7E7C21E20D8A9008C5404 /* MainTabbarController.swift in Sources */,
 				859523FB1E1CDE9500401AE8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,17 +405,6 @@
 			targetProxy = 859524171E1CDE9600401AE8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		859523FE1E1CDE9500401AE8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				859523FF1E1CDE9500401AE8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8595241D1E1CDE9600401AE8 /* Debug */ = {
@@ -454,7 +507,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = N693ZXV8T4;
 				INFOPLIST_FILE = douyuzhibo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.douyuzhibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -470,7 +523,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = N693ZXV8T4;
 				INFOPLIST_FILE = douyuzhibo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.douyuzhibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
