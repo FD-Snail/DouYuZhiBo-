@@ -18,7 +18,6 @@ class MainTabbarController: UITabBarController {
         addChildVC(storyName: "Video")
         addChildVC(storyName: "Follow")
         addChildVC(storyName: "Profile")
-        
     }
     private func addChildVC(storyName : String){
         let childVC = UIStoryboard(name: storyName, bundle: nil).instantiateInitialViewController()

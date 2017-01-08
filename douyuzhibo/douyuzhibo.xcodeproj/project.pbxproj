@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6242813B1E22802000260120 /* WuK_UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6242813A1E22802000260120 /* WuK_UIBarButtonItem.swift */; };
 		629A47211E21C320002C9484 /* douyu_LCD_font.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 629A47201E21C320002C9484 /* douyu_LCD_font.TTF */; };
-		62A5BA2E1E22333000C84DEA /* WuK_NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A5BA2D1E22333000C84DEA /* WuK_NavigationBar.swift */; };
 		62A5BA331E2234B600C84DEA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A5BA321E2234B600C84DEA /* HomeViewController.swift */; };
 		859523FB1E1CDE9500401AE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859523FA1E1CDE9500401AE8 /* AppDelegate.swift */; };
 		859524021E1CDE9600401AE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 859524011E1CDE9600401AE8 /* Assets.xcassets */; };
@@ -41,8 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6242813A1E22802000260120 /* WuK_UIBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WuK_UIBarButtonItem.swift; sourceTree = "<group>"; };
 		629A47201E21C320002C9484 /* douyu_LCD_font.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = douyu_LCD_font.TTF; sourceTree = "<group>"; };
-		62A5BA2D1E22333000C84DEA /* WuK_NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WuK_NavigationBar.swift; sourceTree = "<group>"; };
 		62A5BA321E2234B600C84DEA /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		859523F71E1CDE9500401AE8 /* douyuzhibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = douyuzhibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		859523FA1E1CDE9500401AE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 		62A5BA2C1E222EF100C84DEA /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				62A5BA2D1E22333000C84DEA /* WuK_NavigationBar.swift */,
+				6242813A1E22802000260120 /* WuK_UIBarButtonItem.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -384,9 +384,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6242813B1E22802000260120 /* WuK_UIBarButtonItem.swift in Sources */,
 				85C7E7C21E20D8A9008C5404 /* MainTabbarController.swift in Sources */,
 				859523FB1E1CDE9500401AE8 /* AppDelegate.swift in Sources */,
-				62A5BA2E1E22333000C84DEA /* WuK_NavigationBar.swift in Sources */,
 				62A5BA331E2234B600C84DEA /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
