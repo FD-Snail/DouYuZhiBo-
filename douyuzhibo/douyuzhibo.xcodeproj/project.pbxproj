@@ -87,9 +87,17 @@
 		629A471F1E21C320002C9484 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				62A5BA2C1E222EF100C84DEA /* Category */,
 				629A47201E21C320002C9484 /* douyu_LCD_font.TTF */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		62A5BA2C1E222EF100C84DEA /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		859523EE1E1CDE9500401AE8 = {
