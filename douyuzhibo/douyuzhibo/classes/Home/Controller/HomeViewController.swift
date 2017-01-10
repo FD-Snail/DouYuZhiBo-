@@ -11,11 +11,23 @@ import UIKit
 fileprivate let kTitleViewH : CGFloat = 40
 
 class HomeViewController: UIViewController {
-    
+    //懒加载
     fileprivate lazy var titilView : TitleView = {
         let titleFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH, width: kScreenW, height: kTitleViewH)
         let titleView = TitleView.init(frame: titleFrame, titles: ["推荐","手游","娱乐","游戏","趣玩"])
         return titleView
+    }()
+    fileprivate lazy var contentView : PageView = {[weak self] in
+        let frame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH + kTitleViewH, width: kScreenW, height: kScreenH - kStatusBarH - kNavigationBarH - kTitleViewH)
+        var childVcs = [UIViewController]()
+        childVcs.append(RecommendViewController())
+        childVcs.append(PhoneGameViewController())
+        childVcs.append(AmusementViewController())
+        childVcs.append(GameViewController())
+        childVcs.append(IntersetingViewController())
+        let content = PageView(frame: frame, childVcs: childVcs, parentControll: self!)
+        
+        return content
     }()
     
     override func viewDidLoad() {
@@ -32,7 +44,8 @@ extension HomeViewController {
         setNavi()
         //2 设置标题栏
         view.addSubview(titilView)
-        
+        //3. 添加contentView
+        view.addSubview(contentView)
     }
     fileprivate func setNavi(){
         // 1.设置导航栏背景色

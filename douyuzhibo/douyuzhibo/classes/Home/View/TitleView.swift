@@ -18,7 +18,7 @@ class TitleView: UIView {
     fileprivate var currentIndex = 1000
     // 懒加载属性
     fileprivate lazy var titleLabels : [UILabel] = [UILabel]()
-    fileprivate lazy var scrollView : UIScrollView = {
+    fileprivate lazy var scrollView : UIScrollView = {[weak self] in
         let s = UIScrollView()
         s.showsHorizontalScrollIndicator = false
         s.bounces = false
@@ -27,7 +27,7 @@ class TitleView: UIView {
     }()
     fileprivate lazy var scrollLine : UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(red: kSelectColor.0 / 255.0, green: kSelectColor.1 / 255.0, blue: kSelectColor.2 / 255.0, alpha: 1)
+        view.backgroundColor = UIColor(r: kSelectColor.0, g: kSelectColor.1, b: kSelectColor.2, a: 1)
         return view
         
     }()
@@ -68,7 +68,7 @@ extension TitleView{
             label.tag = 1000 + index
             label.font = UIFont.systemFont(ofSize: 15)
             label.textAlignment = .center
-            label.textColor = UIColor(red: kNormalColor.0 / 255.0, green: kNormalColor.1 / 255.0, blue: kNormalColor.2 / 255.0, alpha: 1)
+            label.textColor = UIColor(r: kNormalColor.0, g: kNormalColor.1, b: kNormalColor.2, a: 1)
             //添加label
             scrollView.addSubview(label)
             titleLabels.append(label)
@@ -99,7 +99,7 @@ extension TitleView{
     fileprivate func setFirstState(){
         let firstLabel = titleLabels[0]
         firstLabel.font = UIFont.systemFont(ofSize: 18)
-        firstLabel.textColor = UIColor(red: kSelectColor.0 / 255.0, green: kSelectColor.1 / 255.0, blue: kSelectColor.2 / 255.0, alpha: 1)
+        firstLabel.textColor = UIColor(r: kSelectColor.0, g: kSelectColor.1, b: kSelectColor.2, a: 1)
     }
 }
 
@@ -116,10 +116,10 @@ extension TitleView{
         else{
             //获取之前的label
             let oldLabel = titleLabels[currentIndex - 1000]
-            oldLabel.textColor = UIColor(red: kNormalColor.0 / 255.0, green: kNormalColor.1 / 255.0, blue: kNormalColor.2 / 255.0, alpha: 1)
+            oldLabel.textColor = UIColor(r: kNormalColor.0, g: kNormalColor.1, b: kNormalColor.2, a: 1)
             oldLabel.font = UIFont.systemFont(ofSize: 15)
             //选择label的设置
-            selectLabel.textColor = UIColor(red: kSelectColor.0 / 255.0, green: kSelectColor.1 / 255.0, blue: kSelectColor.2 / 255.0, alpha: 1)
+            selectLabel.textColor = UIColor(r: kSelectColor.0, g: kSelectColor.1, b: kSelectColor.2, a: 1)
             selectLabel.font = UIFont.systemFont(ofSize: 18)
             //滑块的跟随移动
             let moveWidth = CGFloat(selectLabel.tag - currentIndex) * selectLabel.bounds.width
