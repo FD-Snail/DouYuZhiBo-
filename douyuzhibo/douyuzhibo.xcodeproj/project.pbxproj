@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		6242813B1E22802000260120 /* WuK_UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6242813A1E22802000260120 /* WuK_UIBarButtonItem.swift */; };
+		6242813D1E231B5D00260120 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6242813C1E231B5D00260120 /* TitleView.swift */; };
+		6242813F1E231F0500260120 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6242813E1E231F0500260120 /* Common.swift */; };
 		629A47211E21C320002C9484 /* douyu_LCD_font.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 629A47201E21C320002C9484 /* douyu_LCD_font.TTF */; };
 		62A5BA331E2234B600C84DEA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A5BA321E2234B600C84DEA /* HomeViewController.swift */; };
+		62CC0A541E24D296007DA709 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CC0A531E24D296007DA709 /* PageView.swift */; };
 		859523FB1E1CDE9500401AE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859523FA1E1CDE9500401AE8 /* AppDelegate.swift */; };
 		859524021E1CDE9600401AE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 859524011E1CDE9600401AE8 /* Assets.xcassets */; };
 		859524101E1CDE9600401AE8 /* douyuzhiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8595240F1E1CDE9600401AE8 /* douyuzhiboTests.swift */; };
@@ -42,8 +45,11 @@
 
 /* Begin PBXFileReference section */
 		6242813A1E22802000260120 /* WuK_UIBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WuK_UIBarButtonItem.swift; sourceTree = "<group>"; };
+		6242813C1E231B5D00260120 /* TitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		6242813E1E231F0500260120 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		629A47201E21C320002C9484 /* douyu_LCD_font.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = douyu_LCD_font.TTF; sourceTree = "<group>"; };
 		62A5BA321E2234B600C84DEA /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		62CC0A531E24D296007DA709 /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		859523F71E1CDE9500401AE8 /* douyuzhibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = douyuzhibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		859523FA1E1CDE9500401AE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		859524011E1CDE9600401AE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				6242813A1E22802000260120 /* WuK_UIBarButtonItem.swift */,
+				6242813E1E231F0500260120 /* Common.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -123,6 +130,8 @@
 		62A5BA311E22348A00C84DEA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6242813C1E231B5D00260120 /* TitleView.swift */,
+				62CC0A531E24D296007DA709 /* PageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -388,6 +397,9 @@
 				85C7E7C21E20D8A9008C5404 /* MainTabbarController.swift in Sources */,
 				859523FB1E1CDE9500401AE8 /* AppDelegate.swift in Sources */,
 				62A5BA331E2234B600C84DEA /* HomeViewController.swift in Sources */,
+				6242813F1E231F0500260120 /* Common.swift in Sources */,
+				6242813D1E231B5D00260120 /* TitleView.swift in Sources */,
+				62CC0A541E24D296007DA709 /* PageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

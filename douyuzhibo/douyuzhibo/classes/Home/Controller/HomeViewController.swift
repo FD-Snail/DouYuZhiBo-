@@ -8,19 +8,31 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+fileprivate let kTitleViewH : CGFloat = 40
 
+class HomeViewController: UIViewController {
+    
+    fileprivate lazy var titilView : TitleView = {
+        let titleFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH, width: kScreenW, height: kTitleViewH)
+        let titleView = TitleView.init(frame: titleFrame, titles: ["推荐","手游","娱乐","游戏","趣玩"])
+        return titleView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       setUpUI()
+        //navigation和statusBar的时候防止scrollView添加的时候自动调整尺寸
+        self.automaticallyAdjustsScrollViewInsets = false
+        setUpUI()
     }
-    
-   
 }
 
 extension HomeViewController {
     fileprivate func setUpUI(){
+        //1 设置导航栏
         setNavi()
+        //2 设置标题栏
+        view.addSubview(titilView)
+        
     }
     fileprivate func setNavi(){
         // 1.设置导航栏背景色
@@ -29,7 +41,6 @@ extension HomeViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "logo")
         // 3.设置右侧的Item
         let size = CGSize(width: 40, height: 40)
-        
         let searchItem = UIBarButtonItem(imageName: "searchBtnIcon", highImageName: "btn_search_clicked", size: size)
         let scanItem = UIBarButtonItem(imageName: "scanIcon", highImageName: "Image_scan_click", size: size)
         let historyItem = UIBarButtonItem(imageName: "viewHistoryIcon", highImageName: "btn_history_clicked", size: size)
