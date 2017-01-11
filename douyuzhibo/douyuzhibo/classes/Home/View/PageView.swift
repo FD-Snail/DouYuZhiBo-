@@ -10,10 +10,17 @@ import UIKit
 
 private let CollectCellID = "PageCollectionViewCellID"
 
+protocol PageViewDelegate : class {
+    func pageViewDidScroll(progerss : CGFloat, sourceIndex : Int, targetIndex : Int)
+}
+
 class PageView: UIView {
     
     fileprivate var childVcs : [UIViewController]
     fileprivate var parentVC : UIViewController
+    fileprivate var isForScrollDelegate : Bool = false
+    fileprivate var startOffsetX : CGFloat = 0
+    weak var delegate : PageViewDelegate?
     
     fileprivate lazy var collectionView : UICollectionView = {[weak self] in
         let layout = UICollectionViewFlowLayout()
@@ -28,6 +35,7 @@ class PageView: UIView {
         collection.isPagingEnabled = true
         collection.scrollsToTop = false
         collection.dataSource = self
+        collection.delegate = self
         collection.register(UICollectionViewCell.self, forCellWithReuseIdentifier: CollectCellID)
         return collection
     }()
@@ -73,5 +81,62 @@ extension PageView : UICollectionViewDataSource{
         cell.contentView.addSubview(childVc.view)
         
         return cell
+    }
+}
+
+// MARK: - collectionView代理
+extension PageView : UICollectionViewDelegate{
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        isForScrollDelegate = false
+        startOffsetX = scrollView.contentOffset.x
+    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if isForScrollDelegate {
+            return
+        }
+        var progress : CGFloat = 0
+        var sourceIndex : Int = 0
+        var tagetIndex : Int = 0
+        
+        
+        //判断左划还是右手
+        let isLeft : Bool =  scrollView.contentOffset.x - startOffsetX < 0
+        let scrollW = self.bounds.width
+        
+        if  isLeft {
+            print("往左")
+            progress = scrollView.contentOffset.x / scrollW - floor(scrollView.contentOffset.x / scrollW)
+            
+            sourceIndex = (Int)(scrollView.contentOffset.x / scrollW)
+            
+            tagetIndex = (Int)(scrollView.contentOffset.x / scrollW) + 1
+            if  tagetIndex >= childVcs.count{
+                tagetIndex = childVcs.count - 1
+            }
+        }
+        else{
+            print("往右")
+            progress = 1 - (scrollView.contentOffset.x / scrollW - floor(scrollView.contentOffset.x / scrollW))
+            
+            sourceIndex = (Int)(scrollView.contentOffset.x / scrollW + 1)
+            
+            tagetIndex = (Int)(scrollView.contentOffset.x / scrollW)
+            if sourceIndex >= childVcs.count {
+                sourceIndex = childVcs.count  - 1
+            }
+        }
+        delegate?.pageViewDidScroll(progerss: progress, sourceIndex: sourceIndex, targetIndex: tagetIndex)
+    }
+}
+
+// MARK: - 暴露给外面的方法
+extension PageView{
+    func setCurrentOffset(currentIndex : Int) {
+        // 1.记录需要进制执行代理方法
+        isForScrollDelegate = true
+        
+        // 2.滚动正确的位置
+        let offsetX = CGFloat(currentIndex) * collectionView.frame.width
+        collectionView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: false)
     }
 }

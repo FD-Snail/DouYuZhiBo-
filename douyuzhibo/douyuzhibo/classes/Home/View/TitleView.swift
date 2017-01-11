@@ -7,6 +7,11 @@
 //
 
 import UIKit
+
+protocol TitleViewDelegate : class  {
+    func titleLableClicked(titleView : TitleView, selectIndex : Int)
+}
+
 // 滑动模块的高度
 private let kScrollLineH : CGFloat = 2
 // 字体颜色
@@ -16,6 +21,7 @@ class TitleView: UIView {
     // 接收外部的title数组
     fileprivate var titles : [String] = []
     fileprivate var currentIndex = 1000
+    weak var delegate : TitleViewDelegate?
     // 懒加载属性
     fileprivate lazy var titleLabels : [UILabel] = [UILabel]()
     fileprivate lazy var scrollView : UIScrollView = {[weak self] in
@@ -126,8 +132,28 @@ extension TitleView{
             UIView.animate(withDuration: 0.3, animations: { 
                 self.scrollLine.frame.origin.x += moveWidth
             })
+            //设置当前选中的标记
             currentIndex = selectLabel.tag
+            
+            //通知代理
+            delegate?.titleLableClicked(titleView: self, selectIndex: currentIndex - 1000)
         }
     }
 }
 
+extension TitleView{
+    func setCurrentIndex(progress : CGFloat, sourceIndex : Int, targetIndex : Int) {
+        let sourceLabel = titleLabels[sourceIndex]
+        let targetLabel = titleLabels[targetIndex]
+        //设置滑块
+        let moveTotleX = targetLabel.frame.origin.x - sourceLabel.frame.origin.x
+        let moveX = moveTotleX * progress
+        scrollLine.frame.origin.x = sourceLabel.frame.origin.x + moveX
+        //设置文字颜色渐变
+        let colorData = (kSelectColor.0 - kNormalColor.0, kSelectColor.1 - kNormalColor.1, kSelectColor.2 - kNormalColor.2)
+        sourceLabel.textColor = UIColor(r: kSelectColor.0 + colorData.0 * progress, g: kSelectColor.1 + colorData.1 * progress, b: kSelectColor.2 + colorData.2 * progress, a: 1)
+        targetLabel.textColor = UIColor(r: kNormalColor.0 + colorData.0, g: kNormalColor.1 + colorData.1, b: kNormalColor.2 + colorData.2, a: 1)
+        
+        currentIndex = targetIndex
+    }
+}

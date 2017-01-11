@@ -12,9 +12,10 @@ fileprivate let kTitleViewH : CGFloat = 40
 
 class HomeViewController: UIViewController {
     //懒加载
-    fileprivate lazy var titilView : TitleView = {
+    fileprivate lazy var titilView : TitleView = {[weak self] in
         let titleFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH, width: kScreenW, height: kTitleViewH)
         let titleView = TitleView.init(frame: titleFrame, titles: ["推荐","手游","娱乐","游戏","趣玩"])
+        titleView.delegate = self as TitleViewDelegate?
         return titleView
     }()
     fileprivate lazy var contentView : PageView = {[weak self] in
@@ -26,7 +27,7 @@ class HomeViewController: UIViewController {
         childVcs.append(GameViewController())
         childVcs.append(IntersetingViewController())
         let content = PageView(frame: frame, childVcs: childVcs, parentControll: self!)
-        
+        content.delegate = self
         return content
     }()
     
@@ -60,3 +61,22 @@ extension HomeViewController {
         navigationItem.rightBarButtonItems = [searchItem,scanItem,historyItem]
     }
 }
+
+
+extension HomeViewController : TitleViewDelegate{
+    func titleLableClicked(titleView: TitleView, selectIndex: Int) {
+        contentView.setCurrentOffset(currentIndex: selectIndex)
+    }
+}
+
+extension HomeViewController : PageViewDelegate{
+    func pageViewDidScroll(progerss: CGFloat, sourceIndex: Int, targetIndex: Int) {
+        titilView.setCurrentIndex(progress: progerss, sourceIndex: sourceIndex, targetIndex: targetIndex)
+    }
+}
+
+
+
+
+
+
