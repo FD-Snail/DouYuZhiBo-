@@ -142,23 +142,37 @@ extension TitleView{
 
 extension TitleView{
     func setCurrentIndex(progress : CGFloat, sourceIndex : Int, targetIndex : Int) {
-        print(sourceIndex,targetIndex)
+        print(sourceIndex,targetIndex,progress)
         let sourceLabel = titleLabels[sourceIndex]
         let targetLabel = titleLabels[targetIndex]
         //设置滑块
         let moveTotleX = targetLabel.frame.origin.x - sourceLabel.frame.origin.x
         var moveX = moveTotleX * progress
         if sourceIndex == 0 && targetIndex == 0{
-            moveX = sourceLabel.frame.width * (progress-1)
+            moveX = -sourceLabel.frame.width * progress
         }
         if sourceIndex == titleLabels.count - 1 && targetIndex == titleLabels.count - 1 {
             moveX = sourceLabel.frame.width * progress
         }
         scrollLine.frame.origin.x = sourceLabel.frame.origin.x + moveX + 20
         //设置文字颜色渐变
-//        let colorData = (kSelectColor.0 - kNormalColor.0, kSelectColor.1 - kNormalColor.1, kSelectColor.2 - kNormalColor.2)
-//        sourceLabel.textColor = UIColor(r: kSelectColor.0 + colorData.0 * progress, g: kSelectColor.1 + colorData.1 * progress, b: kSelectColor.2 + colorData.2 * progress, a: 1)
-//        targetLabel.textColor = UIColor(r: kNormalColor.0 + colorData.0, g: kNormalColor.1 + colorData.1, b: kNormalColor.2 + colorData.2, a: 1)
+        let colorData = (kSelectColor.0 - kNormalColor.0, kSelectColor.1 - kNormalColor.1, kSelectColor.2 - kNormalColor.2)
+        if sourceIndex == titleLabels.count - 1 && targetIndex == titleLabels.count - 1 {
+            targetLabel.textColor = UIColor(r: kSelectColor.0, g: kSelectColor.1, b: kSelectColor.1, a: 1)
+            targetLabel.font = UIFont.systemFont(ofSize: 18)
+        }
+        else if sourceIndex == 0 && targetIndex == 0 {
+            targetLabel.textColor = UIColor(r: kNormalColor.0, g: kNormalColor.1, b: kNormalColor.2, a: 1)
+            targetLabel.font = UIFont.systemFont(ofSize: 18)
+        }
+        else{
+            sourceLabel.textColor = UIColor(r: kSelectColor.0 - colorData.0 * progress, g: kSelectColor.1 - colorData.1 * progress, b: kSelectColor.2 - colorData.2 * progress, a: 1)
+            targetLabel.textColor = UIColor(r: kNormalColor.0 + colorData.0 * progress, g: kNormalColor.1 + colorData.1 * progress, b: kNormalColor.2 + colorData.2 * progress, a: 1)
+        }
+        //文字字体大小的渐变
+        let fontData : CGFloat = 3.0
+        sourceLabel.font = UIFont.systemFont(ofSize: 18 - fontData * progress)
+        targetLabel.font = UIFont.systemFont(ofSize: 15 + fontData * progress)
         
         currentIndex = targetIndex + 1000
     }

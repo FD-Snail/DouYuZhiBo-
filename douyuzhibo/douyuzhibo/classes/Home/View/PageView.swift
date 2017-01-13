@@ -96,39 +96,33 @@ extension PageView : UICollectionViewDelegate{
         }
         var progress : CGFloat = 0
         var sourceIndex : Int = 0
-        var tagetIndex : Int = 0
+        var targetIndex : Int = 0
         
         
         //判断左划还是右手
-        let isLeft : Bool =  scrollView.contentOffset.x - startOffsetX < 0
+        let isright : Bool =  scrollView.contentOffset.x - startOffsetX < 0
         let scrollW = self.bounds.width
         
-        if  isLeft {
-            print("往左")
-            progress = 1 - scrollView.contentOffset.x / scrollW - floor(scrollView.contentOffset.x / scrollW)
-            
-//            sourceIndex = 
-//            progress = scrollView.contentOffset.x / scrollW - floor(scrollView.contentOffset.x / scrollW)
-//            
-//            sourceIndex = (Int)(scrollView.contentOffset.x / scrollW)
-//            
-//            tagetIndex = (Int)(scrollView.contentOffset.x / scrollW) + 1
-//            if scrollView.contentOffset.x < 0 {
-//                sourceIndex = 0
-//                tagetIndex = 0
-//            }
+        if  isright {
+            print("往右")
+            progress = 1 - (scrollView.contentOffset.x / scrollW - floor(scrollView.contentOffset.x / scrollW))
+            targetIndex = Int(scrollView.contentOffset.x / scrollW)
+            sourceIndex = targetIndex + 1
+            if scrollView.contentOffset.x < 0 {
+                targetIndex = 0
+                sourceIndex = 0
+            }
         }
         else{
-//            progress = 1 - (scrollView.contentOffset.x / scrollW - floor(scrollView.contentOffset.x / scrollW))
-//            tagetIndex = (Int)(scrollView.contentOffset.x / scrollW)
-//            sourceIndex = (Int)(scrollView.contentOffset.x / scrollW + 1)
-//            
-//            if  sourceIndex >= childVcs.count{
-//                sourceIndex = childVcs.count - 1
-//                tagetIndex = childVcs.count - 1
-//            }
+            progress = scrollView.contentOffset.x / scrollW - floor(scrollView.contentOffset.x / scrollW)
+            sourceIndex = Int(scrollView.contentOffset.x / scrollW)
+            targetIndex = Int(scrollView.contentOffset.x / scrollW) + 1
+            if targetIndex >= childVcs.count {
+                targetIndex = childVcs.count - 1
+            }
+
         }
-        delegate?.pageViewDidScroll(progerss: progress, sourceIndex: sourceIndex, targetIndex: tagetIndex)
+        delegate?.pageViewDidScroll(progerss: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
     }
 }
 
