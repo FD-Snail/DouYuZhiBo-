@@ -134,7 +134,6 @@ extension TitleView{
             })
             //设置当前选中的标记
             currentIndex = selectLabel.tag
-            
             //通知代理
             delegate?.titleLableClicked(titleView: self, selectIndex: currentIndex - 1000)
         }
@@ -143,17 +142,24 @@ extension TitleView{
 
 extension TitleView{
     func setCurrentIndex(progress : CGFloat, sourceIndex : Int, targetIndex : Int) {
+        print(sourceIndex,targetIndex)
         let sourceLabel = titleLabels[sourceIndex]
         let targetLabel = titleLabels[targetIndex]
         //设置滑块
         let moveTotleX = targetLabel.frame.origin.x - sourceLabel.frame.origin.x
-        let moveX = moveTotleX * progress
-        scrollLine.frame.origin.x = sourceLabel.frame.origin.x + moveX
+        var moveX = moveTotleX * progress
+        if sourceIndex == 0 && targetIndex == 0{
+            moveX = sourceLabel.frame.width * (progress-1)
+        }
+        if sourceIndex == titleLabels.count - 1 && targetIndex == titleLabels.count - 1 {
+            moveX = sourceLabel.frame.width * progress
+        }
+        scrollLine.frame.origin.x = sourceLabel.frame.origin.x + moveX + 20
         //设置文字颜色渐变
-        let colorData = (kSelectColor.0 - kNormalColor.0, kSelectColor.1 - kNormalColor.1, kSelectColor.2 - kNormalColor.2)
-        sourceLabel.textColor = UIColor(r: kSelectColor.0 + colorData.0 * progress, g: kSelectColor.1 + colorData.1 * progress, b: kSelectColor.2 + colorData.2 * progress, a: 1)
-        targetLabel.textColor = UIColor(r: kNormalColor.0 + colorData.0, g: kNormalColor.1 + colorData.1, b: kNormalColor.2 + colorData.2, a: 1)
+//        let colorData = (kSelectColor.0 - kNormalColor.0, kSelectColor.1 - kNormalColor.1, kSelectColor.2 - kNormalColor.2)
+//        sourceLabel.textColor = UIColor(r: kSelectColor.0 + colorData.0 * progress, g: kSelectColor.1 + colorData.1 * progress, b: kSelectColor.2 + colorData.2 * progress, a: 1)
+//        targetLabel.textColor = UIColor(r: kNormalColor.0 + colorData.0, g: kNormalColor.1 + colorData.1, b: kNormalColor.2 + colorData.2, a: 1)
         
-        currentIndex = targetIndex
+        currentIndex = targetIndex + 1000
     }
 }

@@ -105,25 +105,28 @@ extension PageView : UICollectionViewDelegate{
         
         if  isLeft {
             print("往左")
-            progress = scrollView.contentOffset.x / scrollW - floor(scrollView.contentOffset.x / scrollW)
+            progress = 1 - scrollView.contentOffset.x / scrollW - floor(scrollView.contentOffset.x / scrollW)
             
-            sourceIndex = (Int)(scrollView.contentOffset.x / scrollW)
-            
-            tagetIndex = (Int)(scrollView.contentOffset.x / scrollW) + 1
-            if  tagetIndex >= childVcs.count{
-                tagetIndex = childVcs.count - 1
-            }
+//            sourceIndex = 
+//            progress = scrollView.contentOffset.x / scrollW - floor(scrollView.contentOffset.x / scrollW)
+//            
+//            sourceIndex = (Int)(scrollView.contentOffset.x / scrollW)
+//            
+//            tagetIndex = (Int)(scrollView.contentOffset.x / scrollW) + 1
+//            if scrollView.contentOffset.x < 0 {
+//                sourceIndex = 0
+//                tagetIndex = 0
+//            }
         }
         else{
-            print("往右")
-            progress = 1 - (scrollView.contentOffset.x / scrollW - floor(scrollView.contentOffset.x / scrollW))
-            
-            sourceIndex = (Int)(scrollView.contentOffset.x / scrollW + 1)
-            
-            tagetIndex = (Int)(scrollView.contentOffset.x / scrollW)
-            if sourceIndex >= childVcs.count {
-                sourceIndex = childVcs.count  - 1
-            }
+//            progress = 1 - (scrollView.contentOffset.x / scrollW - floor(scrollView.contentOffset.x / scrollW))
+//            tagetIndex = (Int)(scrollView.contentOffset.x / scrollW)
+//            sourceIndex = (Int)(scrollView.contentOffset.x / scrollW + 1)
+//            
+//            if  sourceIndex >= childVcs.count{
+//                sourceIndex = childVcs.count - 1
+//                tagetIndex = childVcs.count - 1
+//            }
         }
         delegate?.pageViewDidScroll(progerss: progress, sourceIndex: sourceIndex, targetIndex: tagetIndex)
     }
