@@ -61,6 +61,7 @@ extension PageView{
         }
         //2.添加ScrollView
         addSubview(collectionView)
+        collectionView.autoresizingMask = [.flexibleHeight,.flexibleWidth]
     }
 }
 
@@ -104,7 +105,6 @@ extension PageView : UICollectionViewDelegate{
         let scrollW = self.bounds.width
         
         if  isright {
-            print("往右")
             progress = 1 - (scrollView.contentOffset.x / scrollW - floor(scrollView.contentOffset.x / scrollW))
             targetIndex = Int(scrollView.contentOffset.x / scrollW)
             sourceIndex = targetIndex + 1

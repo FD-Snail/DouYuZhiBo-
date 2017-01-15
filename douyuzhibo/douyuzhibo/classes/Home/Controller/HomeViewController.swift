@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
         return titleView
     }()
     fileprivate lazy var contentView : PageView = {[weak self] in
-        let frame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH + kTitleViewH, width: kScreenW, height: kScreenH - kStatusBarH - kNavigationBarH - kTitleViewH)
+        let frame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH + kTitleViewH, width: kScreenW, height: kScreenH - kStatusBarH - kNavigationBarH - kTitleViewH - 48)
         var childVcs = [UIViewController]()
         childVcs.append(RecommendViewController())
         childVcs.append(PhoneGameViewController())
